@@ -1,6 +1,6 @@
 # SIMPLE INTRO/RETRO SCREEN FOR TERMINAL
 
-![](ZZZ/ZZZ.)
+![](ZZZ/ZZZ.png)
 
 * Have blinking characters on your screen
 * Cool, relaxing and asthetic
