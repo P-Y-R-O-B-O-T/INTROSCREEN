@@ -28,7 +28,7 @@ def live_renderer() -> Panel :
 
     reset_confeti_layer_and_color_matrix()
 
-    for _ in range(int(len(GRAPHICS_MATRIX)*len(GRAPHICS_MATRIX[0])*(random.randint(0, 0)/100))) :
+    for _ in range(int(len(GRAPHICS_MATRIX)*len(GRAPHICS_MATRIX[0])*(random.randint(0, 6)/100))) :
         row = random.randint(0, len(GRAPHICS_MATRIX)-1)
         col = random.randint(0, len(GRAPHICS_MATRIX[0])-1)
         if GRAPHICS_MATRIX[row][col] == " " :
@@ -49,6 +49,7 @@ def live_renderer() -> Panel :
                 if CONFETI_LAYER[_][__] != " " :
                     text += "[{0}]{1}[/{0}]".format(CONFETTI_COLOR_MATRIX[_][__],
                                                     CONFETI_LAYER[_][__])
+                    pass
                 else :
                     text += " "
         if _ != len(GRAPHICS_MATRIX)-1 :
@@ -57,7 +58,7 @@ def live_renderer() -> Panel :
                  expand=True)
 
 def animator() -> None :
-    with Live(live_renderer(), refresh_per_second=60) as L :
+    with Live(live_renderer(), refresh_per_second=20) as L :
         while True :
             time.sleep(0.1)
             L.update(live_renderer())
